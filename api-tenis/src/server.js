@@ -14,6 +14,10 @@ app.use((req, res, next) => {
     console.log(`${req.method} - ${req.url}`)
     next()
 })
+app.get('/health ',(req,res)=>{
+    res.json({message:'Servidor funcionando.',success: true})
+  }  )
+
 
 app.use('/clientes', clienteRouter)
 app.use('/produtos', produtoRouter)
