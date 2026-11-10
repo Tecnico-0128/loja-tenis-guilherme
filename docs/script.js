@@ -30,7 +30,7 @@ const clientes = JSON.parse(localStorage.getItem("clientes")) || []
                         }
 
                         clientes.push(clientee)
-                         await fetch('http://localhost:3000/clientes',{
+                         await fetch('https://loja-tenis-guilherme.onrender.com/health/clientes',{
                             method: 'POST',
                             headers:{'Content-type':'application/json'},
                             body:JSON.stringify(clientee)
@@ -117,7 +117,7 @@ function listar2() {
     if (c) {
 
             const resposta = await fetch(
-                `http://localhost:3000/clientes/${c.id}`,
+                `https://loja-tenis-guilherme.onrender.com/health/clientes/${c.id}`,
                 {
                     method: "DELETE"
                 }
@@ -169,7 +169,7 @@ const produtos = JSON.parse(localStorage.getItem("produtos")) || []
                 };
 
                 produtos.push(produtoo);
-                   await fetch('http://localhost:3000/produtos',{
+                   await fetch('https://loja-tenis-guilherme.onrender.com/health/produtos',{
                             method: 'POST',
                             headers:{'Content-type':'application/json'},
                             body:JSON.stringify(produtoo)
@@ -236,7 +236,7 @@ const vendas = JSON.parse(localStorage.getItem("vendas")) || [];
 
                         }
                         vendas.push(venda)
-                        await fetch('http://localhost:3000/vendas',{
+                        await fetch('https://loja-tenis-guilherme.onrender.com/health/vendas',{
                             method: 'POST',
                             headers:{'Content-type':'application/json'},
                             body:JSON.stringify(venda)
@@ -299,7 +299,7 @@ const lista_cliente = document.getElementById("listagem_cliente");
 
 
 async function buscar_cliente() {
-    const busca = await fetch("http://localhost:3000/clientes")
+    const busca = await fetch("https://loja-tenis-guilherme.onrender.com/health/clientes")
     const dados = await busca.json()
 
     clientes.length = 0
@@ -337,7 +337,7 @@ async function atualizar_cliente() {
             c.nome = edit_nome.value || c.nome;
             c.telefone = edit_telefone.value || c.telefone;
             let resposta = await fetch(
-                `http://localhost:3000/clientes/${c.id}`, {
+                `https://loja-tenis-guilherme.onrender.com/health/clientes/${c.id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
@@ -401,14 +401,14 @@ const dados5=document.getElementById("lista-produto")
 
 //         p.quantidade = numero2 + numero;
 
-//         // const resposta = await fetch(`http://localhost:3000/produtos/${p.nome_produto}`, {
+//         // const resposta = await fetch(`https://loja-tenis-guilherme.onrender.com/health/produtos/${p.nome_produto}`, {
 //         //     method: "PUT",
 //         //     headers: {
 //         //         "Content-Type": "application/json"
 //         //     },
 //         //     body: JSON.stringify(p)
 //         // });  
-//         const resposta = await fetch(`http://localhost:3000/produtos/${p.id}`, {
+//         const resposta = await fetch(`https://loja-tenis-guilherme.onrender.com/health/produtos/${p.id}`, {
 //     method: "PUT",
 //     headers: {
 //         "Content-Type": "application/json"
@@ -459,7 +459,7 @@ async function adicionar() {
 
     try {
 
-        const resposta = await fetch(`http://localhost:3000/produtos/${p.id}`, {
+        const resposta = await fetch(`https://loja-tenis-guilherme.onrender.com/health/produtos/${p.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -491,7 +491,7 @@ function listar_produto3() {
 }
 
 async function buscar_produto() {
-    const buscaa = await fetch("http://localhost:3000/produtos")
+    const buscaa = await fetch("https://loja-tenis-guilherme.onrender.com/health/produtos")
     const dadoss = await buscaa.json()
     produtos.length = 0
     produtos.push(...dadoss)
@@ -500,7 +500,7 @@ async function buscar_produto() {
 buscar_produto()
 //------------------------------COMPRA------------------------//
 async function buscar_compra() {
-    const buscarr = await fetch("http://localhost:3000/vendas")
+    const buscarr = await fetch("https://loja-tenis-guilherme.onrender.com/health/vendas")
     const dadosrr = await buscarr.json()
     compras.length = 0
     compras.push(...dadosrr)
@@ -509,7 +509,7 @@ async function buscar_compra() {
 buscar_compra()
 //------------------------------VENDAS------------------------//
 async function buscar_venda() {
-    const buscara = await fetch("http://localhost:3000/vendas")
+    const buscara = await fetch("https://loja-tenis-guilherme.onrender.com/health/vendas")
     const dadosr = await buscara.json()
     vendas.length = 0
     vendas.push(...dadosr)
