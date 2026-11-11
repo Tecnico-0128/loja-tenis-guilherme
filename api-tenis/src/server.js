@@ -19,9 +19,9 @@ app.get('/health',(req,res)=>{
   }  )
 
 
-app.use('/health/clientes', clienteRouter)
-app.use('/health/produtos', produtoRouter)
-app.use('/health/vendas', vendasRouter)
+app.use('/clientes', clienteRouter)
+app.use('/produtos', produtoRouter)
+app.use('/vendas', vendasRouter)
 
 app.use((req, res) => {
     res.status(404).json({
