@@ -5,7 +5,6 @@ const dados = document.getElementById("lista-cliente")
 const cadastroo = document.getElementById("cadastro")
 const clientes = JSON.parse(localStorage.getItem("clientes")) || []
 
-console.log("Elemento:", dados4);
  async function cadastro() {
     if (nome_cliente.value.trim() && cpf_cliente.value.trim() && telefone_cliente.value.trim()) {
 
@@ -384,59 +383,7 @@ const add=document.getElementById("adicionar")
 const dados5=document.getElementById("lista-produto")
 
 
-//  async function adicionar() {
-//     const p = produtos.find(item =>
-//         item.nome === produto_nome.value
-//     );
 
-//     if (p) {
-
-//         let numero = Number(add_quantidade.value);
-
-//         if (numero <= 0 || isNaN(numero)) {
-//             alert("Digite uma quantidade válida!");
-//             return;
-//         }
-
-//         let numero2 = Number(p.quantidade);
-
-//         p.quantidade = numero2 + numero;
-
-//         // const resposta = await fetch(`https://loja-tenis-guilherme.onrender.com/produtos/${p.nome_produto}`, {
-//         //     method: "PUT",
-//         //     headers: {
-//         //         "Content-Type": "application/json"
-//         //     },
-//         //     body: JSON.stringify(p)
-//         // });  
-//         const resposta = await fetch(`https://loja-tenis-guilherme.onrender.com/produtos/${p.id}`, {
-//     method: "PUT",
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(p)
-// });
-
-// console.log("Status:", resposta.status);
-
-// const dados = await resposta.json();
-
-// console.log("Resposta da API:", dados);
-
-//         localStorage.setItem("produtos", JSON.stringify(produtos));
-
-//         alert("Alteração feita com sucesso! Estoque atual: " + p.quantidade);
-
-//         if (!resposta) {
-//             alert("Erro ao atualizar o estoque!");
-//             return;
-//         }
-
-
-//     } else {
-//         alert("Produto não encontrado!");
-//     }
-// }
 
 async function adicionar() {
 
@@ -496,7 +443,7 @@ async function buscar_produto() {
     const dadoss = await buscaa.json()
     produtos.length = 0
     produtos.push(...dadoss)
-    listar_produtoo()
+    listar_produto3()
 }
 buscar_produto()
 //------------------------------COMPRA------------------------//
