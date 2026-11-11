@@ -5,6 +5,7 @@ const dados = document.getElementById("lista-cliente")
 const cadastroo = document.getElementById("cadastro")
 const clientes = JSON.parse(localStorage.getItem("clientes")) || []
 
+console.log("Elemento:", dados4);
  async function cadastro() {
     if (nome_cliente.value.trim() && cpf_cliente.value.trim() && telefone_cliente.value.trim()) {
 
